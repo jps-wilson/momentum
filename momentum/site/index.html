@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Momentum — a lightweight task and progress app to manage your daily tasks and track progress.">
+    <!-- * FONTS * -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
+    <!-- * LIBRARIES * -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+    <!-- * CSS * -->
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/utilities.css">
+    <title>Momentum | Focused Productivity </title>
+</head>
+
+<body>
+    <div class="app">
+        <aside class="sidebar" role="navigation" aria-label="Main navigation">
+            <h2>Momentum</h2>
+            <nav>
+                <ul>
+                    <li class="active" aria-current="page">
+                        <i data-lucide="calendar"></i>
+                        Today <span class="nav-count" id="today-badge">0</span>
+                    </li>
+                    <li>
+                        <i data-lucide="clock"></i>
+                        Upcoming <span class="nav-count" id="upcoming-badge">0</span>
+                    </li>
+                    <li>
+                        <i data-lucide="check-circle"></i>
+                        Completed <span class="nav-count" id="completed-badge"></span>
+                    </li>
+                </ul>
+            </nav>
+        </aside>
+
+        <!-- * MAIN CANVAS * -->
+        <main class="canvas" id="main-canvas">
+
+            <!-- * HEADER / GREETING * -->
+            <section class="task-header">
+                <header class="topbar">
+                    <div class="topbar-left">
+                        <h1 id="greeting"></h1>
+                        <p id="task-count-message">You have 0 tasks today.</p>
+                    </div>
+
+                    <div class="topbar-right">
+                        <!-- * THEME TOGGLE * -->
+                        <div class="toggle-container" id="container">
+                            <i data-lucide="moon" class="toggle-icon toggle-moon"></i>
+                            <i data-lucide="sun" class="toggle-icon toggle-sun"></i>
+                            <div class="toggle" id="theme-toggle" aria-label="Toggle dark mode"></div>
+                        </div>
+                    </div>
+                </header>
+            </section>
+
+            <!-- * TASK INPUT * -->
+            <section class="task-input" id="task-input-section">
+                <form id="add-task-form" aria-label="Add a new task" novalidate>
+                    <label for="new-task-input" class="visually-hidden">New task</label>
+                    <input id="new-task-input" type="text" placeholder="Add a task..." required />
+                    <input id="task-due-date" type="text" placeholder="yyy-mm-dd" />
+                    <input id="task-notes" type="text" placeholder="Notes (optional)" />
+                    <button type="submit">Add</button>
+                </form>
+            </section>
+
+
+            <!-- * TASK LIST SECTIONS * -->
+            <section class="task-list-section" id="today-tasks">
+                <h3>Today</h3>
+                <div class="task-list" id="task-list" tabindex="0" aria-label="Task list"></div>
+            </section>
+
+            <section class="task-list-section" id="upcoming-tasks">
+                <h3>Upcoming</h3>
+                <div class="task-list" id="upcoming-task-list"></div>
+            </section>
+
+        </main>
+
+        <!-- * INSIGHTS PANEL * -->
+        <section class="insights" aria-labelledby="insights-heading">
+            <div class="insights-header">
+                <h2 id="insights-heading">Insights</h2>
+            </div>
+            <div id="insights-content">
+                <div class="insight-item" id="progress-insight">
+                    <p>Progress</p>
+                    <div class="progress">
+                        <div class="progress-fill" id="progress-fill"></div>
+                    </div>
+                </div>
+                <div class="insight-item" id="streak-insight">
+                    <p id="insights-summary">You've completed <span id="completed-count">0</span> tasks</p>
+                </div>
+            </div>
+        </section>
+
+    </div>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+        lucide.createIcons();
+    </script>
+    <script src="js/tasks.js"></script>
+    <script src="js/theme.js"></script>
+</body>
+<footer class="footer"></footer>
+
+</html>

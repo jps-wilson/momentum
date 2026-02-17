@@ -1,0 +1,204 @@
+:root {
+  /* Backgrounds */
+  --color-bg: #f7f7f5;
+  --color-surface: #ffffff;
+  --color-hover: #f3f3f1;
+
+  /* Text */
+  --dark-text-primary: #141416;
+  --dark-text-secondary: #393939;
+  --dark-text-tertiary: #7a7a7a;
+  --dark-text-disabled: #b5b5b5;
+
+  /* Borders & shadows */
+  --color-border: rgba(0, 0, 0, 0.08);
+  --shadow-card:
+    0px 6px 20px rgba(0, 0, 0, 0.11), 0px 1.5px 6px rgba(99, 102, 241, 0.04);
+
+  /* Color Palette */
+  --platinum: #eef0f2;
+  --silver: #c6c7c4;
+  --lilac-ash: #a2999e;
+  --smoky-rose: #846a6a;
+  --gunmetal: #353b3c;
+
+  --color-accent: #e06c6c;
+  --accent-gradient: linear-gradient(135deg, #e06c6c, #d95757);
+  --progress-accent: var(--color-accent);
+}
+
+/* * DARK MODE * */
+[data-theme="dark"] {
+  /* Backgrounds */
+  --color-bg: #0f0f11;
+  --color-surface: #18181b;
+  --color-hover: #27272a;
+
+  /* Text */
+  --light-text-primary: #f5f5f5;
+  --light-text-secondary: #d4d4d4;
+  --light-text-tertiary: #a1a1a1;
+  --light-text-disabled: #6b6b6b;
+
+  /* Borders & shadows */
+  --color-border: rgba(255, 255, 255, 0.1);
+  --shadow-card:
+    0px 6px 20px rgba(0, 0, 0, 0.4), 0px 1.5px 6px rgba(99, 102, 241, 0.15);
+
+  /* Dark Mode – Brightened Palette */
+  --platinum: #f8fafc;
+  --silver: #dde1e6;
+  --lilac-ash: #c2b6cc;
+  --smoky-rose: #b08d8d;
+  --gunmetal: #50595c;
+}
+
+[data-theme="dark"] #theme-toggle i {
+  color: #f5f5f5;
+}
+
+/* Default (light) */
+body,
+.task-card,
+.header,
+h1,
+h2,
+h3 {
+  color: var(--dark-text-primary);
+}
+
+/* Dark mode override */
+[data-theme="dark"] body,
+[data-theme="dark"] .task-card,
+[data-theme="dark"] .header,
+[data-theme="dark"] h1,
+[data-theme="dark"] h2,
+[data-theme="dark"] h3 {
+  color: var(--light-text-primary);
+}
+
+/* * TYPOGRAPHY * */
+:root {
+  --font-sans: "Inter", sans-serif;
+  --font-friendly: "Quicksand", Helvetica, Arial sans-serif;
+
+  /* Type scale */
+  --font-size-app-title: 32px;
+  --font-weight-app-title: 650;
+  --letter-spacing-app-title: -0.01em;
+
+  --font-size-section-header: 28px;
+  --font-weight-section-header: 600;
+  --letter-spacing-section-header: -0.01em;
+
+  --font-size-card-title: 20px;
+  --font-weight-card-title: 500;
+
+  --font-size-body: 16px;
+  --font-weight-body: 450;
+
+  --font-size-metadata: 14px;
+  --font-weight-metadata: 450;
+
+  --font-size-micro: 12px;
+  --font-weight-micro: 500;
+
+  /* Line heights */
+  --line-height-body: 1.5;
+  --line-height-header: 1.2;
+}
+
+/* * SPACING SYSTEM * */
+:root {
+  --space-xs: 4px;
+  --space-sm: 8px;
+  --space-md: 16px;
+  --space-lg: 32px;
+  --space-xl: 64px;
+
+  --line-height-block: 24px;
+}
+
+/* * CARD STYLING * */
+:root {
+  --card-radius: 18px;
+  --card-padding: 28px;
+  --card-border: 1px solid var(--color-border);
+  --card-shadow: var(--shadow-card);
+  --card-min-height: 76px;
+}
+
+/* * MOTION & TRANSITION * */
+:root {
+  --transition-fast: 120ms;
+  --transition-medium: 200ms;
+  --transition-ease: cubic-bezier(0.2, 0.8, 0.2, 1);
+  --hover-brightness: 1.025;
+  --hover-shadow:
+    0px 10px 24px rgba(99, 102, 241, 0.06), 0 2px 8px rgba(0, 0, 0, 0.09);
+}
+
+/* * LAYOUT GUIDELINES * */
+:root {
+  /* Sidebar width */
+  --sidebar-width: 260px;
+
+  /* Insights panel width */
+  --insights-width: 280px;
+
+  /* Gap between columns */
+  --layout-gap: 32px;
+}
+
+/* * TASK CARD TYPOGRAPHY & SPACING * */
+:root {
+  --task-title-size: 22px;
+  --task-title-weight: 525;
+
+  --metadata-size: 14px;
+  --metadata-weight: 450;
+  --metadata-color: #9aa0a6;
+
+  /* Optical grouping */
+  --gap-title-metadata: 8px;
+  --gap-metadata-subtasks: 16px;
+}
+
+/* * PROGRESS HORIZON * */
+:root {
+  --progress-height: 10px;
+  --progress-radius: 8px;
+  --progress-bg: rgba(0, 0, 0, 0.06);
+  --progress-fill-color: var(--progress-accent);
+  --progress-transition: width 0.2s ease-in-out;
+}
+
+/* * INTERACTION * */
+:root {
+  /* Checkbox completion */
+  --checkbox-animate-scale: 0.96;
+  --checkbox-animate-duration: 150ms;
+
+  /* Minimum width for interactive areas */
+  --min-button-width: 80px;
+}
+
+:root {
+  /* Hover / Shadow Enhancements */
+  --shadow-hover:
+    0px 12px 24px rgba(0, 0, 0, 0.12), 0px 2px 8px rgba(99, 102, 241, 0.05);
+
+  --hover-brightness: 1.025;
+
+  /* Progress Bar Radius Matching Cards */
+  --progress-radius: 14px;
+
+  /* Text Contrast Tweak */
+  --color-text-primary: #141416;
+  --color-text-secondary: #3a3a3a;
+
+  /* Motion & Transitions */
+  --transition-fast: 140ms;
+  --transition-medium: 250ms;
+  --transition-ease: cubic-bezier(0.25, 0.8, 0.25, 1);
+}
